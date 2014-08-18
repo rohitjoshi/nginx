@@ -2818,7 +2818,7 @@ ngx_http_proxy_merge_loc_conf(ngx_conf_t *cf, void *parent, void *child)
                               prev->ssl_certificate, "");
     ngx_conf_merge_str_value(conf->ssl_certificate_key,
                               prev->ssl_certificate_key, "");
-    if( conf->ssl_trusted_certificate.len != 0  && ( conf->ssl_certificate.len != 0 || conf->ssl_certificate_key) ) {
+    if( conf->ssl_trusted_certificate.len != 0  && ( conf->ssl_certificate.len != 0 || conf->ssl_certificate_key.len != 0) ) {
          ngx_log_error(NGX_LOG_WARN, cf->log, 0,
                       "proxy_ssl_trusted_certificate is configured so proxy_ssl_certificate and proxy_ssl_certificate_key will be ignored");
     }
